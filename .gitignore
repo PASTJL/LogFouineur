@@ -1,8 +1,8 @@
-/target/
+/target
 settings.xml
-/.gradle/
+/.gradle
 .gradle/
-/build/
+/build
 /.project
 /.classpath
 /lauchInstru.cmd
@@ -16,5 +16,5 @@ settings.xml
 ./*.ksh
 /*.cmd
 /pluginMake.cmd
-./doc/
-./docs/
+./doc
+./docs

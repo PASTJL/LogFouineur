@@ -1,0 +1,12 @@
+org.jlp.logfouineur.csvviewer.csvutils
+org.jlp.logfouineur.disruptor
+org.jlp.logfouineur.filestat.disruptor
+org.jlp.logfouineur.filestat.models
+org.jlp.logfouineur.filestat.ui
+org.jlp.logfouineur.models
+org.jlp.logfouineur.parseview
+org.jlp.logfouineur.records
+org.jlp.logfouineur.ui
+org.jlp.logfouineur.ui.controller
+org.jlp.logfouineur.ui.tools
+org.jlp.logfouineur.util

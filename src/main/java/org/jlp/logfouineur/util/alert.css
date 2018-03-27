@@ -1,0 +1,6 @@
+.root {
+    -fx-background-color: rgb(250,200,0);
+    -fx-background-radius: 5;
+    -fx-padding: 10;
+    fx-border-width: 5;
+}

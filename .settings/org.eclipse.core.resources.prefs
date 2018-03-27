@@ -1,0 +1,4 @@
+eclipse.preferences.version=1
+encoding//src/main/java/org/jlp/logfouineur/records/ConfigRecord.java=ISO-8859-1
+encoding//src/main/java/org/jlp/logfouineur/records/RecordReader.java=ISO-8859-1
+encoding//src/test/org/jlp/logfouineur/tests/RecordReaderTest.java=ISO-8859-1

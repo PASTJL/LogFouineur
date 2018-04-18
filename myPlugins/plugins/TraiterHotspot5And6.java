@@ -1,70 +1,172 @@
-/*Copyright 2012 Jean-Louis PASTUREL 
-*
-*   Licensed under the Apache License, Version 2.0 (the "License");
-*  you may not use this file except in compliance with the License.
-*  You may obtain a copy of the License at
-*
-*       http://www.apache.org/licenses/LICENSE-2.0
-*
-*   Unless required by applicable law or agreed to in writing, software
-*  distributed under the License is distributed on an "AS IS" BASIS,
-*   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-*   See the License for the specific language governing permissions and
-*  limitations under the License.
+/*
+ * Copyright 2017 Jean-Louis Pasturel
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *  http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
 */
 package plugins;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+// TODO: Auto-generated Javadoc
+
+/**
+ * The Class TraiterHotspot5And6.
+ */
 public class TraiterHotspot5And6 implements IMyPlugins {
+	
+	/** The parameter. */
 	public String parameter = "";
 
+	/**
+	 * The Class StructHotspot5And6.
+	 */
 	class StructHotspot5And6 {
+		
+		/** The size young generation before. */
 		Double sizeYoungGenerationBefore = Double.NaN;
+		
+		/** The size young generation after. */
 		Double sizeYoungGenerationAfter = Double.NaN;
+		
+		/** The size old generation before. */
 		Double sizeOldGenerationBefore = Double.NaN;
+		
+		/** The size old generation after. */
 		Double sizeOldGenerationAfter = Double.NaN;
+		
+		/** The size heap before. */
 		Double sizeHeapBefore = Double.NaN;
+		
+		/** The size heap after. */
 		Double sizeHeapAfter = Double.NaN;
+		
+		/** The size perm gen before. */
 		Double sizePermGenBefore = Double.NaN;
+		
+		/** The size perm gen after. */
 		Double sizePermGenAfter = Double.NaN;
+		
+		/** The minor GC duration. */
 		Double minorGCDuration = Double.NaN;
+		
+		/** The throughput. */
 		Double throughput = Double.NaN;
+		
+		/** The full GC duration. */
 		Double fullGCDuration = Double.NaN;
+		
+		/** The cms remark duration. */
 		Double cmsRemarkDuration = Double.NaN;
+		
+		/** The cms initial mark duration. */
 		Double cmsInitialMarkDuration = Double.NaN;
+		
+		/** The cms concurrent mark duration. */
 		Double cmsConcurrentMarkDuration = Double.NaN;
+		
+		/** The cms concurrent sweep. */
 		Double cmsConcurrentSweep = Double.NaN;
+		
+		/** The cms concurrent preclean. */
 		Double cmsConcurrentPreclean = Double.NaN;
+		
+		/** The cms concurrent reset duration. */
 		Double cmsConcurrentResetDuration = Double.NaN;
+		
+		/** The full GC size young generation before. */
 		Double fullGCSizeYoungGenerationBefore = Double.NaN;
+		
+		/** The full GC size young generation after. */
 		Double fullGCSizeYoungGenerationAfter = Double.NaN;
+		
+		/** The full GC size old generation before. */
 		Double fullGCSizeOldGenerationBefore = Double.NaN;
+		
+		/** The full GC size old generation after. */
 		Double fullGCSizeOldGenerationAfter = Double.NaN;
+		
+		/** The full GC size heap before. */
 		Double fullGCSizeHeapBefore = Double.NaN;
+		
+		/** The full GC size heap after. */
 		Double fullGCSizeHeapAfter = Double.NaN;
+		
+		/** The sys time spent. */
 		Double sysTimeSpent = Double.NaN;
+		
+		/** The user time spent. */
 		Double userTimeSpent = Double.NaN;
+		
+		/** The real time spent. */
 		Double realTimeSpent = Double.NaN;
+		
+		/** The mem throughput. */
 		Double memThroughput = Double.NaN;
+		
+		/** The minor GC frequency. */
 		Double minorGCFrequency = Double.NaN;
+		
+		/** The major GC frequency. */
 		Double majorGCFrequency = Double.NaN;
+		
+		/** The cms sweep GC frequency. */
 		Double cmsSweepGCFrequency = Double.NaN;
+		
+		/** The minor GC period. */
 		Double minorGCPeriod = Double.NaN;
+		
+		/** The major GC period. */
 		Double majorGCPeriod = Double.NaN;
+		
+		/** The cms sweep GC period. */
 		Double cmsSweepGCPeriod = Double.NaN;
 	};
 
+	/** The struct hot spot. */
 	public static StructHotspot5And6 structHotSpot = null;
+	
+	/** The circle array. */
 	public static CircleArray circleArray = null;
+	
+	/** The minor GC circle array. */
 	public static CircleArray minorGCCircleArray = null;
+	
+	/** The major GC circle array. */
 	public static CircleArray majorGCCircleArray = null;
+	
+	/** The cms sweep GC circle array. */
 	public static CircleArray cmsSweepGCCircleArray = null;
+	
+	/** The enr current. */
 	public static String enrCurrent = null;
+	
+	/** The is struct filled. */
 	public static boolean isStructFilled = false;
+	
+	/** The date in millis. */
 	public static Long dateInMillis = 0l;
+	
+	/** The date in millis full GC. */
 	public static Long dateInMillisFullGC = 0L;
+	
+	/** The date in millis minor GC. */
 	public static Long dateInMillisMinorGC = 0L;
 
+	/**
+	 * Initialize.
+	 *
+	 * @param strRegex2 the str regex 2
+	 */
 	public void initialize(String strRegex2) {
 		// To reinitialise static variable if necessary
 
@@ -81,6 +183,12 @@ public class TraiterHotspot5And6 implements IMyPlugins {
 		parameter = strRegex2;
 	}
 
+	/**
+	 * Return double.
+	 *
+	 * @param line the line
+	 * @return the double
+	 */
 	public Double returnDouble(String line) {
 
 		if (TraiterHotspot5And6.enrCurrent == null) {
@@ -171,6 +279,11 @@ public class TraiterHotspot5And6 implements IMyPlugins {
 
 	}
 
+	/**
+	 * Traiter enr.
+	 *
+	 * @param line the line
+	 */
 	private void  traiterEnr(String line) {
     // trouver la date:
 
@@ -188,6 +301,12 @@ public class TraiterHotspot5And6 implements IMyPlugins {
     }
   }
 
+	/**
+	 * Remplir struct.
+	 *
+	 * @param dateCurrent the date current
+	 * @param line the line
+	 */
 	private void  remplirStruct(Long dateCurrent, String line) {
 	  Pattern patLong=Pattern.compile("\\d+");
 

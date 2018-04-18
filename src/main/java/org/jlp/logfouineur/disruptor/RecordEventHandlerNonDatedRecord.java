@@ -353,7 +353,7 @@ public class RecordEventHandlerNonDatedRecord implements EventHandler<LogRecordE
 		Matcher matcher = regexDateRecord.matcher(line);
 		if (matcher.find()) {
 			String extract = matcher.group();
-			Double gapDateInMillisDbl = Double.valueOf(extract) * factorDateInMillis;
+			Double gapDateInMillisDbl = Double.valueOf(extract.replace(",", ".")) * factorDateInMillis;
 			long gapDateInMillis = gapDateInMillisDbl.longValue();
 
 			long fullTime = gapDateInMillis + originDate.getTime();

@@ -184,13 +184,23 @@ public class MenuEventHandler implements EventHandler<ActionEvent> {
 		 showCsvViewer(ParseView.generatedCsvFile);
 		}
 	}
-
+	
 	/**
 	 * Show csv viewer.
 	 *
 	 * @param generatedCsvFile the generated csv file
 	 */
 	public void showCsvViewer(String generatedCsvFile) {
+		showCsvViewer(generatedCsvFile,1) ;
+	}
+	
+	/**
+	 * Show csv viewer.
+	 *
+	 * @param generatedCsvFile the generated csv file
+	 * @param pas the pas
+	 */
+	public void showCsvViewer(String generatedCsvFile,long pas) {
 		HBox menuGen = new HBox();
 
 		VBox screen = new VBox();
@@ -225,7 +235,7 @@ public class MenuEventHandler implements EventHandler<ActionEvent> {
 
 		CompositePanel.chart.setXLabel(((MyLongToDateConverter) CompositePanel.chart.timeConverter).getTimeFormat());
 		//On choisit un pas de 10s que lon pourra modifier ensuite
-		cp.nbSteps.setText("10");
+		cp.nbSteps.setText(Long.toString(pas));
 		cp.units.getSelectionModel().select("s");
 		FileChooser fc = new FileChooser();
 		fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("csv Files", "*.csv", "*.csv.gz"));

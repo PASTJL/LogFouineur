@@ -469,7 +469,8 @@ public class LogFouineurFill {
 		HBox hbJavaFormatDate = new HBox(10);
 		hbJavaFormatDate.setAlignment(Pos.CENTER_LEFT);
 		Label lJavaFormatDate = new Label("Java Date Format :");
-		lJavaFormatDate.setTooltip(new Tooltip("Java Date Format (SimpleDateFormat) or \"DateInMillis\" "));
+		lJavaFormatDate.setTooltip(new Tooltip("Java Date Format (SimpleDateFormat) or \"DateInMillis\" +"
+				+ "\n when dateInMillis, add factorInMillis after ; like : DateInMillis;1000"));
 		tfJavaFormatDate.setPrefWidth(300);
 		tfJavaFormatDate.setFont(Font.font("Arial", FontWeight.BOLD, FontPosture.REGULAR, 12));
 		tfJavaFormatDate.setPromptText("Java Date Format (SimpleDateFormat) or \"DateInMillis\"");

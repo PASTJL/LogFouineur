@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"plugins","l":"CircleArray"},{"p":"plugins","l":"Compute2Values"},{"p":"plugins","l":"IMyPlugins"},{"p":"plugins","l":"MonoTreatGCJDK9Throughput"},{"p":"plugins","l":"MonoTreatGCJDK9Throughput.StructGCJDK9Throughput"},{"p":"plugins","l":"StrucLongDouble"},{"p":"plugins","l":"TraiterHotspot5And6"}]

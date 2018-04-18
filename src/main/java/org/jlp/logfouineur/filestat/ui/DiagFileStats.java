@@ -19,28 +19,15 @@ package org.jlp.logfouineur.filestat.ui;
 import java.awt.Dimension;
 
 
-import org.jlp.logfouineur.disruptor.LogRecordEvent;
-import org.jlp.logfouineur.disruptor.LogRecordEventProducer;
-import org.jlp.logfouineur.disruptor.ParsingMain;
-import org.jlp.logfouineur.disruptor.RecordEventHandlerDatedRecord;
 import org.jlp.logfouineur.filestat.disruptor.FileStatEvent;
 import org.jlp.logfouineur.filestat.disruptor.FileStatsLineHandler;
 import org.jlp.logfouineur.filestat.disruptor.FileStatsLineHandlerDated;
 import org.jlp.logfouineur.filestat.disruptor.FileStatsLineProducer;
 import org.jlp.logfouineur.filestat.models.CumulEnregistrementStat;
-import org.jlp.logfouineur.models.AggLogRecordEvent;
-import org.jlp.logfouineur.models.JFXValue;
-import org.jlp.logfouineur.models.ParsingConfigHandler;
-import org.jlp.logfouineur.records.ConfigRecord;
-import org.jlp.logfouineur.records.RecordReader;
-import org.jlp.logfouineur.ui.LogFouineurFill;
 import org.jlp.logfouineur.ui.LogFouineurMain;
-import org.jlp.logfouineur.ui.Messages;
-
 import com.lmax.disruptor.BlockingWaitStrategy;
 import com.lmax.disruptor.BusySpinWaitStrategy;
 import com.lmax.disruptor.EventHandler;
-import com.lmax.disruptor.RingBuffer;
 import com.lmax.disruptor.SleepingWaitStrategy;
 import com.lmax.disruptor.YieldingWaitStrategy;
 import com.lmax.disruptor.dsl.Disruptor;
@@ -62,7 +49,6 @@ import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.io.UncheckedIOException;
 import java.net.URL;
-import java.nio.channels.Channel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.ParseException;
@@ -98,13 +84,11 @@ import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.net.URLClassLoader;
 
 // TODO: Auto-generated Javadoc

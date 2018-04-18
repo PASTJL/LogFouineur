@@ -177,8 +177,8 @@ public class ParseView {
 							e.printStackTrace();
 						}
 						if (null != line) {
-							System.out.println("line="+line);
-							System.out.println("debEn="+debEnr+ " ; reg1="+reg1);
+							//System.out.println("line="+line);
+							//System.out.println("debEn="+debEnr+ " ; reg1="+reg1);
 							
 							// println ("MonoLine line="+line)
 							// println ("MonoLine debEnr="+debEnr)
@@ -192,9 +192,11 @@ public class ParseView {
 
 								if ((matchDebenr.find()) && (matchReg1.find())) {
 									isFit = true;
-								} else {
-									isFit = false	;
+									//System.out.println("fit OK with line="+line);
 								}
+//								} else {
+//									isFit = false	;
+//								}
 							}
 
 						}
@@ -319,7 +321,7 @@ public class ParseView {
 						}
 					}
 				}
-
+				if (isFit)break;
 			}
 		}
 		if (!fit.trim().equals("") ) {

@@ -24,13 +24,19 @@ import java.util.regex.Pattern;
  * The Class Compute2Values.
  */
 public class Compute2Values implements IMyPlugins {
+	
+	/** The regex 2 2. */
 	String regex1_1,regex1_2,regex2_1,regex2_2;
+	
+	/** The op. */
 	String op;
 	
 	
 
 	/**
 	 * Initialize.
+	 *
+	 * @param strRegex2 the str regex 2
 	 */
 	public void initialize(String strRegex2){
 	/*	The first character is the separator for splitting
@@ -60,7 +66,7 @@ public class Compute2Values implements IMyPlugins {
 	/**
 	 * Return double.
 	 *
-	 * @param params the params
+	 * @param line the line
 	 * @return the double
 	 */
 	public Double returnDouble(String line){

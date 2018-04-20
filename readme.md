@@ -2,10 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 5.4.5.1 (Linux)"/>
-	<meta name="created" content="2018-03-27T09:10:02.509863952"/>
-	<meta name="changed" content="2018-03-27T09:27:46.408115055"/>
+	
 </head>
 <body lang="en-US" dir="ltr">
 <ol>
